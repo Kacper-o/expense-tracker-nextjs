@@ -17,3 +17,8 @@ export interface TransactionResult {
     data?: TransactionData;
     error?: string;
 }
+
+export interface TransactionByCategory {
+    category: string;
+    transactions: Transaction[];
+}

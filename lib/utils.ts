@@ -40,8 +40,9 @@ export function countBalance(income: number, expenses: number): string {
 }
 
 export async function setLineChartData() {
-  const {transactionsByCategory} = await getTransactionsByCategory();
-  console.log("transactions",transactionsByCategory);
+  const result = await getTransactionsByCategory();
+  const transactionsByCategory = result?.transactionsByCategory || [];
+  console.log("transactions", transactionsByCategory);
   
   const data = {
     labels: transactionsByCategory.map((item: any) => item.category),
@@ -58,10 +59,9 @@ export async function setLineChartData() {
         ],
         borderWidth: 1,
       },
-    
     ],
   };
-  console.log("data",data)
+  console.log("data", data);
   return data;
 }
 
@@ -92,13 +92,6 @@ export async function setDoughnutChartData() {
     
   ];
 
-  const options: any = {
-    plugins: {
-      responsive: true,
-    },
-    cutout: rawData.map((item) => item.cutout),
-  };
-
    const data = {
     labels: rawData.map((item) => item.label),
     datasets: [
@@ -111,26 +104,7 @@ export async function setDoughnutChartData() {
       },
     ],
   };
- 
-/*   const data = {
-    labels: ["Income", "Expense"],
-    datasets: [
-      {
-        data: income,
-        backgroundColor: 'rgba(52, 200, 90, 0.2)',
-        borderColor: 'rgba(52, 200, 90, 1)',
-        borderWidth: 1,
-        dataVisibility: true
-      },
-      {
-        data: expense,
-        backgroundColor: 'rgba(255, 99, 132, 0.2)',
-        borderColor: 'rgba(255, 99, 132, 1)',
-        borderWidth: 1,
-        dataVisibility: true
-      },
-    ],
-  }; */
+
   console.log("data",data)
   return data;
 }

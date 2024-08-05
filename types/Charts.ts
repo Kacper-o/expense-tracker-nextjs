@@ -19,4 +19,6 @@ export interface DoughnutChartData {
         borderWidth: number[];
         dataVisibility: boolean[];
     }[]
+   
+   
 }

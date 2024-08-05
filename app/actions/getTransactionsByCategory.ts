@@ -1,11 +1,11 @@
 'use server';
 
-import { type Transaction } from "@/types/Transaction";
 import { db } from "@/lib/db";
 import { auth } from "@clerk/nextjs/server";
+import { type Transaction, TransactionByCategory } from "@/types/Transaction";
 
 async function getTransactionsByCategory(): Promise<{
-    transactionsByCategory?: Array<{ category: string, transactions: Transaction[] }>;
+    transactionsByCategory?: TransactionByCategory[];
     error?: string
 }> {
     const { userId } = auth();

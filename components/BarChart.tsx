@@ -24,11 +24,19 @@ const Bar = dynamic(() => import('react-chartjs-2').then((mod) => mod.Bar), {
   console.log("data2", data)
     if (!data) return <div className='loading-container'>Loading...</div>;
   
+    const options: any = {
+      plugins: {
+        responsive: true,
+        legend: {
+          display: false
+        }
+      },
+    };
   
   return (
     <div className='chart-container' >
       <h1>Income and Expense</h1>
-      <Bar data={data} />
+      <Bar data={data} options={options}/>
     </div>
   );
 };
