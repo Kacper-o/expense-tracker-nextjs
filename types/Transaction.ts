@@ -4,4 +4,16 @@ export interface Transaction {
     amount: number;
     userId: string;
     createdAt: Date;
+    category: string;
+}
+
+export interface TransactionData {
+    text: string;
+    amount: number;
+    category: string;
+}
+
+export interface TransactionResult {
+    data?: TransactionData;
+    error?: string;
 }

@@ -30,6 +30,7 @@ model Transaction {
   amount Float
   userId String
   user User @relation(fields: [userId], references: [clerkUserId], onDelete: Cascade)
+  category String
   createdAt DateTime @default(now())
   @@index([userId])
 }
