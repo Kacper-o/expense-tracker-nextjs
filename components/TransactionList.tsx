@@ -4,7 +4,7 @@ import TransactionItem from "./TransactionItem";
 
 const TransactionList = async () => {
     const { transactions, error } = await getTransactions()
-
+    console.log("error", error);
     if(error) {
         return <p className="error">{error}</p>
     }

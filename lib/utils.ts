@@ -3,6 +3,7 @@ import { get } from "http";
 import { twMerge } from "tailwind-merge"
 import getIncomeExpense from "@/app/actions/getIncomeExpense";
 import { raw } from "@prisma/client/runtime/library";
+import getTransactionsByCategory from "@/app/actions/getTransactionsByCategory";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
@@ -39,15 +40,15 @@ export function countBalance(income: number, expenses: number): string {
 }
 
 export async function setLineChartData() {
-  const { income, expense } = await getIncomeExpense();
-  console.log(income, expense);
+  const {transactionsByCategory} = await getTransactionsByCategory();
+  console.log("transactions",transactionsByCategory);
   
   const data = {
-    labels: ['Food', 'Bills', 'Investments', 'Entertainment', 'Transport', 'Clothes', 'Health', 'Travel', 'Other'],
+    labels: transactionsByCategory.map((item: any) => item.category),
     datasets: [
       {
         label: 'Value',
-        data: [10,20,50,3,99, 300, 199, 47, 100],
+        data: transactionsByCategory.map((item: any) => item.transactions.reduce((acc: any, transaction: any) => Math.abs(acc + transaction.amount), 0)),
         barThickness: 20,
         backgroundColor: [
           'rgba(150, 150, 156, 0.2)',

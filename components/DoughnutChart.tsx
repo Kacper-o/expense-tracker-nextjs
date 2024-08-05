@@ -26,7 +26,7 @@ function DoughnutChart() {
     fetchData();
   }, []);
 console.log("data2", data)
-  if (!data) return <div>Loading...</div>;
+  if (!data) return <div className="loading-container">Loading...</div>;
  
 
   return <Doughnut data={data}  className="doughnut-chart" />

@@ -35,11 +35,33 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
 export default function TransactionModal() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  const toggleBodyScroll = (isOpen: boolean) => {
+    if (isOpen) {
+      document.body.classList.add('modal-open');
+    } else {
+      document.body.classList.remove('modal-open');
+    }
+  };
+
+  const openModal = () => {
+    setIsModalOpen(true);
+    toggleBodyScroll(true);
+  };
+  
+  const closeModal = () => {
+    setIsModalOpen(false);
+    toggleBodyScroll(false);
+  };
+  
+  
+  
+  
+
   return (
     <>
-      <FloatingButton onClick={() => setIsModalOpen(true)} />
-      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-        <AddTransaction />
+      <FloatingButton onClick={openModal} />
+      <Modal isOpen={isModalOpen} onClose={closeModal}>
+        <AddTransaction onClose={() => setIsModalOpen(false)}/>
       </Modal>
     </>
   );

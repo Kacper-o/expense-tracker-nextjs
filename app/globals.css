@@ -18,13 +18,22 @@ body {
   justify-content: center;
 }
 
-
+body.modal-open {
+  overflow: hidden;
+}
 
 .container {
   margin: 30px auto;
   width: 1200px;
   display: flex;
   justify-content: center;
+}
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 335px;
 }
 
 .wrapper {

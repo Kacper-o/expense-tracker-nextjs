@@ -5,7 +5,7 @@ import addTransaction from "@/app/actions/addTransaction";
 import { toast } from "react-toastify";
 
 
-const AddTransaction = () => {
+const AddTransaction = ({ onClose }: { onClose: () => void }) => {
     const formRef = useRef<HTMLFormElement>(null);
     const clientAction = async (formData: FormData) => {
         console.log("formData",formData);
@@ -16,6 +16,8 @@ const AddTransaction = () => {
         } else {
             toast.success('Transaction added');
             formRef.current?.reset();
+            onClose(); 
+            window.location.reload(); 
         }
     }
 
@@ -27,7 +29,7 @@ const AddTransaction = () => {
                     <label htmlFor="text">Category</label>
                     <select className="select" name="category" id="category">
                         <option value="food">Food</option>
-                        <option value="expense">Bills</option>
+                        <option value="bills">Bills</option>
                         <option value="investment">Investment</option>
                         <option value="investment">Entertainment</option>
                         <option value="transport">Transport</option>
