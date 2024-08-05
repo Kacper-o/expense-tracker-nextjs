@@ -15,7 +15,6 @@ const HomePage = async () => {
     const user = await currentUser()
     const balance = await getUserBalance()
   
-
   const outcomeDoughnutChartStyles = {
     color: ['rgba(52, 200, 90, 0.2)', 'rgba(255, 99, 132, 0.2)']/* ["rgba(179, 12, 0, 0.2)", "rgba(255, 41, 26, 0.2)", "rgba(255, 112, 102, 0.2)", "rgba(255, 136, 128, 0.2)"] */,
     borderColor: ['rgba(52, 200, 90, 1)', 'rgba(255, 99, 132, 1)']/* ["rgba(179, 12, 0, 0.6)", "rgba(255, 41, 26, 0.6)", "rgba(255, 112, 102, 0.6)", "rgba(255, 136, 128, 0.6)"] */
