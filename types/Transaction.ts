@@ -4,13 +4,13 @@ export interface Transaction {
     amount: number;
     userId: string;
     createdAt: Date;
-    category: string;
+    category?: string;
 }
 
 export interface TransactionData {
     text: string;
     amount: number;
-    category: string;
+    category?: string;
 }
 
 export interface TransactionResult {

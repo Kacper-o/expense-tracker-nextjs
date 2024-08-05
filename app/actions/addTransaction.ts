@@ -15,7 +15,7 @@ async function addTransaction(formData: FormData): Promise<TransactionResult> {
     console.log("amountValue", amountValue);
     console.log("categoryValue", categoryValue);
     // Check for input values
-    if(!textValue || textValue === '' || !amountValue) {
+    if(!textValue || textValue === '' || !amountValue || !categoryValue) {
         return { error: 'Text or amount is missing' };
     }
     
@@ -35,7 +35,8 @@ async function addTransaction(formData: FormData): Promise<TransactionResult> {
             data: {
                 text,
                 amount,
-                userId
+                userId,
+                category
             }
         })
 
