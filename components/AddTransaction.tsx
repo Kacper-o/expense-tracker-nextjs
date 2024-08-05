@@ -26,7 +26,7 @@ const AddTransaction = () => {
             <div className="form-control">
                     <label htmlFor="text">Category</label>
                     <select className="select" name="category" id="category">
-                        <option className="select-option" value="income">Food</option>
+                        <option value="food">Food</option>
                         <option value="expense">Bills</option>
                         <option value="investment">Investment</option>
                         <option value="investment">Entertainment</option>
