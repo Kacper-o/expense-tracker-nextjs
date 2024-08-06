@@ -358,7 +358,7 @@ input[type='number']:hover {
   }
 }
 
-/* .cl-internal-11f0qyb {
+.cl-internal-11f0qyb {
   background-color: #1c1c1e !important;
 }
 
@@ -393,9 +393,13 @@ input[type='number']:hover {
   color: #fff
 }
 
+.cl-internal-15di8d4 {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
 .cl-internal-8hu0g {
   box-shadow: rgba(80, 80, 80, 0.15) 1.95px 1.95px 2.6px;
-} */
+}
 
 .chart-container {
   width: 100%;
