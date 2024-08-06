@@ -2,30 +2,26 @@
 import { auth } from "@clerk/nextjs/server"
 import { db } from "@/lib/db";
 import { revalidatePath } from "next/cache"
+import { type TransactionResult, TransactionData } from "@/types/Transaction";
 
 
-interface TransactionData {
-    text: string;
-    amount: number;
-}
-
-interface TransactionResult {
-    data?: TransactionData;
-    error?: string;
-}
 
 async function addTransaction(formData: FormData): Promise<TransactionResult> {
     const textValue = formData.get('text');
     const amountValue = formData.get('amount');
+    const categoryValue = formData.get('category');
 
+    console.log("textValue", textValue);
+    console.log("amountValue", amountValue);
+    console.log("categoryValue", categoryValue);
     // Check for input values
-    if(!textValue || textValue === '' || !amountValue) {
+    if(!textValue || textValue === '' || !amountValue || !categoryValue) {
         return { error: 'Text or amount is missing' };
     }
     
     const text: string = textValue.toString() // Ensure text is string
     const amount: number = parseFloat(amountValue.toString()); // Parse amount as number
-
+    const category: string = categoryValue.toString();
     // Get logged in user
     const  { userId } = auth();
 
@@ -39,7 +35,8 @@ async function addTransaction(formData: FormData): Promise<TransactionResult> {
             data: {
                 text,
                 amount,
-                userId
+                userId,
+                category
             }
         })
 
