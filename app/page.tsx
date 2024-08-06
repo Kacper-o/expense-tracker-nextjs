@@ -20,11 +20,6 @@ const HomePage = async () => {
     borderColor: ['rgba(52, 200, 90, 1)', 'rgba(255, 99, 132, 1)']/* ["rgba(179, 12, 0, 0.6)", "rgba(255, 41, 26, 0.6)", "rgba(255, 112, 102, 0.6)", "rgba(255, 136, 128, 0.6)"] */
   }
 
- /*  const incomeDoughnutChartStyles = {
-    color: ["rgba(31, 122, 54, 0.2)", "rgba(52, 200, 90, 0.2)", "rgba(113, 218, 139, 0.2)", "rgba(154, 229, 172, 0.2)"],
-    borderColor: ["rgba(31, 122, 54, 1)", "rgba(52, 200, 90, 0.6)", "rgba(113, 218, 139, 0.6)", "rgba(154, 229, 172, 0.6)"]
-  } */
-
     if(!user) {
         return <Guest />
     }
