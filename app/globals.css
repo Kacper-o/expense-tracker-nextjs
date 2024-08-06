@@ -152,10 +152,6 @@ h4 {
   box-shadow: rgba(0, 0, 0, 0.05) 0px 10px 20px, rgba(0, 0, 0, 0.2) 0px 6px 6px;
 }
 
-/* .guest-right-section {
-
-} */
-
 .error {
   background: red;
   color: #fff;
@@ -364,40 +360,40 @@ input[type='number']:hover {
 
 /* .cl-internal-11f0qyb {
   background-color: #1c1c1e !important;
-} */
+}
 
-/* .cl-internal-w4f4gh { 
+.cl-internal-w4f4gh { 
   background: #1c1c1e !important;
-} */
+}
 
-/* .cl-internal-n8erpa {
+.cl-internal-n8erpa {
   background-color: #34c85a ;
   color: #fff;
-} */
+}
 
-/* .cl-internal-n8erpa[data-variant="solid"][data-color="primary"] {
+.cl-internal-n8erpa[data-variant="solid"][data-color="primary"] {
   box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px;
-} */
+}
 
-/* .cl-internal-n8erpa:hover {
+.cl-internal-n8erpa:hover {
   background-color: #70efde;
-} */
+}
 
-/* .cl-internal-15di8d4 {
+.cl-internal-15di8d4 {
   background-color: #dbb2ff !important;
-} */
+}
 
-/* .cl-internal-phfxlr {
+.cl-internal-phfxlr {
   border-radius: 15px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-} */
+}
 
-/* .cl-internal-15di8d4[data-variant="outline"] {
+.cl-internal-15di8d4[data-variant="outline"] {
   box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px;
   color: #fff
-} */
+}
 
-/* .cl-internal-8hu0g {
+.cl-internal-8hu0g {
   box-shadow: rgba(80, 80, 80, 0.15) 1.95px 1.95px 2.6px;
 } */
 
